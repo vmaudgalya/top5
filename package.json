@@ -1,0 +1,41 @@
+{
+  "name": "top5",
+  "version": "1.0.0",
+  "description": "A project that pulls some interesting statistics from github",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
+    "build": "webpack --config webpack-production.config.js --progress --colors",
+    "scrape": "node scripts/scraper.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vmaudgalya/top5.git"
+  },
+  "author": "Varun Maudgalya <mvarun321@gmail.com> (https://github.com/vmaudgalya)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-runtime": "^6.3.19",
+    "eslint": "^2.2.0",
+    "eslint-loader": "^1.1.1",
+    "eslint-plugin-react": "^4.0.0",
+    "html-webpack-plugin": "^2.7.2",
+    "react-hot-loader": "^1.3.0",
+    "transfer-webpack-plugin": "^0.1.4",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "react": "^0.14.3",
+    "react-bootstrap": "^0.28.3",
+    "react-dom": "^0.14.3",
+    "react-tap-event-plugin": "^0.2.1",
+    "request": "^2.69.0"
+  }
+}
