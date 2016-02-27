@@ -5,6 +5,11 @@ var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 var config = {
+  // Node
+  node: {
+    fs: "empty"
+  },
+
   //Entry points to the project
   entry: [
     'webpack/hot/dev-server',
@@ -24,7 +29,7 @@ var config = {
     inline: true,
     port: 3000        //Port Number
   },
-  devtool: 'eval',
+  devtool: 'source-map',
   output: {
     path: buildPath,    //Path of output file
     filename: 'app.js'
@@ -40,7 +45,7 @@ var config = {
     ], path.resolve(__dirname, "src"))
   ],
   module: {
-    //Loaders to interpret non-vanilla javascript code as well as most other extensions including images and text.
+    //Loaders to interpret non- vanilla javascript code as well as most other extensions including images and text.
     preLoaders: [
       {
         //Eslint loader
@@ -51,6 +56,10 @@ var config = {
       },
     ],
     loaders: [
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
       {
         //React-hot loader and
         test: /\.(js|jsx)$/,  //All .js and .jsx files

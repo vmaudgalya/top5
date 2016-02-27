@@ -4,7 +4,7 @@ const async = require('async');
 const request = require('request');
 
 exec(`curl -G https://api.github.com/search/repositories \
---data-urlencode "q=created:>\`date -v-7d '+%Y-%m-%d'\`" \
+--data-urlencode "q=created:>\`date -v-1d '+%Y-%m-%d'\`" \
 --data-urlencode "sort=stars" \
 --data-urlencode "order=desc" \
 > ../src/data/trending_repos.json`)
